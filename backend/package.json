@@ -1,0 +1,25 @@
+{
+  "name": "ine-price-tracker-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node scripts/init-db.js",
+    "scrape": "node scripts/run-scheduled.js",
+    "scrape:headed": "node scripts/run-scheduled.js --headed",
+    "scrape:product": "node scripts/scrape-product.js",
+    "test": "node --test test/parse.test.js test/validate.test.js test/csv.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "pg": "^8.13.1",
+    "playwright": "~1.56.0"
+  }
+}
